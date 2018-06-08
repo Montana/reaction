@@ -15,7 +15,7 @@ COPY --chown=node package.json $APP_SOURCE_DIR/
 # Without this NPM cannot write packages into node_modules later, when running in a container.
 RUN mkdir "$APP_SOURCE_DIR/node_modules" && chown node "$APP_SOURCE_DIR/node_modules"
 
-RUN meteor npm install
+RUN npm install
 
 COPY --chown=node . $APP_SOURCE_DIR
 
